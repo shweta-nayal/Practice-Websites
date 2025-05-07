@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+.banner {
+    background: linear-gradient(to right, #e9d4a6, #f0dca7);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner a {
+    background-color: black;
+    color: white;
+    padding: 6px 12px;
+    margin-left: 10px;
+    /* margin-top: 1px; */
+    text-decoration: none;
+    border-radius: 5px;
+    white-space: nowrap;
+    align-self: center;
+}
+
+/* ========== NAVBAR ========== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    margin-top: 4%;
+}
+
+.navbar .logo img {
+    width: 12%;
+    height: auto;
+    /* padding: 2% 0; */
+    display: flex;
+    width: 111px;
+}
+
+/* Nav Links */
+.navbar nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+
+/* Icons */
+.icons span {
+    margin-left: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ========== For Dropdown ========== */
+/* .nav-item-with-dropdown {
+    position: relative;
+} */
+
+.main-container {
+    overflow: visible;
+    display: none;
+    position: absolute;
+    top: -34px;
+    left: -570px;
+    margin: 0;
+    width: 100vw;
+    background: white;
+    color: black;
+    padding: 30px 100px;
+    padding-top: 90px;
+    /* z-index: 100; */
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+}
+
+.nav-item-with-dropdown:hover .main-container {
+    display: flex;
+    color: #000;
+    margin: 0;
+    margin-top: 15%;
+}
+
+
+/* Products Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    flex: 3;
+}
+
+.car {
+    text-align: center;
+}
+
+.car img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.car h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.links a {
+    text-decoration: underline;
+    color: #716e6e;
+    margin: 0 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    font-size: 14px;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+    margin-left: 70px;
+    font-weight: 550;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar li:hover {
+    color: #555;
+}
+
+/* For Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+}
+
+
+.hero {
+    position: relative;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero .hero-content1 {
+    height: 100vh;
+    background-image: url("../images/Tesla1.avif");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: whitesmoke;
+}
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 5%;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.hero .subtext {
+    font-size: 16px;
+    color: #ddd;
+    font-weight: 550;
+}
+
+.hero .hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    transition: background 0.3s ease;
+}
+
+.hero .order {
+    background-color: #3e6ae1;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero .order:hover {
+    background-color: #2c4da7;
+}
+
+.hero .learn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero .learn:hover {
+    background-color: rgb(241, 238, 238);
+}
+
+.hero .hero-buttons button {
+    width: 15vw;
+    margin-top: 29%;
+}
+
+.hero .hero-content2 {
+    display: block;
+    background-image: url("../images/Tesla2.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content3 {
+    display: block;
+    background-image: url("../images/Tesla4.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content4 {
+    display: block;
+    background-image: url("../images/Tesla3.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content5 {
+    display: block;
+    background-image: url("../images/Tesla5.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content6 {
+    display: block;
+    background-image: url("../images/solar-panel.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content7 {
+    display: block;
+    background-image: url("../images/solar-roof.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content8 {
+    display: block;
+    background-image: url("../images/powerwall.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.hero .hero-content9 {
+    display: block;
+    background-image: url("../images/accessories.avif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+
+.drive-button {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 0;
+    position: sticky;
+}
+
+.drive-button button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.drive-button button:hover {
+    background-color: rgb(239, 234, 234);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    flex-wrap: wrap;
+}
+
+footer .info-text {
+    text-align: center;
+    font-size: 13px;
+    padding: 30px;
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: rgb(99, 98, 98);
+}
+
+footer .info-text .terms {
+    color: black;
+    text-decoration: underline;
+    /* ensure underline for this link */
+    white-space: nowrap;
+    /* keeps it on the same line */
+}
+
+.footer-links {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: rgb(102, 101, 101);
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 550;
+}
